@@ -1,0 +1,58 @@
+block sales
+
+    -
+        var tableSales = [
+        {
+        'Product': 'Bread',
+        'Category': 'Food',
+        'Price': '$1'
+        },
+        {
+        'Product': 'Milk',
+        'Category': 'Food',
+        'Price': '$2'
+        },
+        {
+        'Product': 'iPhone',
+        'Category': 'Electronics',
+        'Price': '$699'
+        },
+        {
+        'Product': 'TV',
+        'Category': 'Electronics',
+        'Price': '$1099'
+        },
+        {
+        'Product': 'F.Dostoevsky"Crime and Punishment',
+        'Category': 'Books',
+        'Price': '$8'
+        }];
+
+    .sales
+        h1 Sales
+        .sales-content
+            table#table1.sales-content__table
+                thead
+                    tr
+                        th
+                            label(for='label_all')
+                                input(id='label_all', type='checkbox', value='1')
+                                span
+                        th(style='width: 50%') Product
+                        th Category
+                        th(colspan='2') Price
+                tbody
+                    for products in tableSales
+                        tr
+                            td
+                                label(for='label_' + (tableSales.indexOf(products) + 1) )
+                                    input(id='label_' + (tableSales.indexOf(products) + 1), type='checkbox', value='1')
+                                    span
+                            td= products.Product
+                            td= products.Category
+                            td= products.Price
+                            td
+                                a(href='#')
+                                    img.btn_edit(src="assets/styles/img/btn-edit.svg")
+                                a(href='#')
+                                    img.btn_del(src="assets/styles/img/btn-del.svg")
