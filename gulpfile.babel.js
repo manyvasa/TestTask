@@ -22,6 +22,10 @@ const paths = {
     src: 'src/scripts/**/*.js',
     dest: 'build/assets/scripts/'
   },
+  img: {
+    src: 'src/img/**/*',
+    dest: 'build/assets/styles/img/'
+  },    
   vendor: {
     styles: {
       src: 'src/vendor/styles/**/*.css',
@@ -86,6 +90,10 @@ export function vendorScripts() {
     .pipe(browserSync.stream());
 }
 
+export function copyImg() {
+  return gulp.src(paths.img.src)
+    .pipe(gulp.dest(paths.img.dest))
+}
 /*
  * You could even use `export as` to rename exported tasks
  */
@@ -112,7 +120,7 @@ export function serve() {
  * You can still use `gulp.task`
  * for example to set task names that would otherwise be invalid
  */
-const build = gulp.series(clean, gulp.parallel(styles, scripts, vendorStyles, vendorScripts, html));
+const build = gulp.series(clean, gulp.parallel(styles, scripts, vendorStyles, vendorScripts, html, copyImg));
 gulp.task('build', build);
 
 /*

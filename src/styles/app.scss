@@ -115,7 +115,7 @@ header {
 
 .charts {margin-top: 67px;}
 .recommend {margin-top: 65px;}
-.sales {margin-top: 60px;}
+.sales {margin-top: 50px;}
 
 .charts-content, .sales-content, .recommend-content {
   border-top: 1px solid #4e5d6c;
@@ -131,6 +131,7 @@ header {
     flex-basis: 300px;
     flex-grow: 1;
     justify-content: space-around;
+    margin-bottom: 10px;
   }
   &__item {
     display: flex;

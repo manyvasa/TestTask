@@ -8,8 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-    <!--link(rel="stylesheet" href="assets/styles/vendor.css")-->
-    <link rel="stylesheet" href="assets/styles/circle.css">
+    <link rel="stylesheet" href="assets/styles/vendor.css">
     <link rel="stylesheet" href="assets/styles/main.min.css">
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.js"></script>
   </head>
@@ -102,7 +101,7 @@
                       <input id="label_all" type="checkbox" value="1"><span></span>
                     </label>
                   </th>
-                  <th>Product</th>
+                  <th style="width: 50%">Product</th>
                   <th>Category</th>
                   <th colspan="2">Price</th>
                 </tr>
@@ -170,15 +169,14 @@
         <div class="recommend">
           <h1>We Recommend</h1>
           <div class="recommend-content">
-            <div class="recommend-content__item"><img src="assets/styles/img/Malaysian.jpg"></div>
-            <div class="recommend-content__item"><img src="assets/styles/img/Malaysian.jpg"></div>
-            <div class="recommend-content__item"><img src="assets/styles/img/Malaysian.jpg"></div>
+            <div class="recommend-content__item"><img src="assets/styles/img/img1.jpg" srcset="assets/styles/img/img1-2x.jpg 2x"></div>
+            <div class="recommend-content__item"><img src="assets/styles/img/img2.jpg" srcset="assets/styles/img/img2-2x.jpg 2x"></div>
+            <div class="recommend-content__item"><img src="assets/styles/img/img3.jpg" srcset="assets/styles/img/img3-2x.jpg 2x"></div>
           </div>
         </div><br><br>
       </div>
     </div>
-    <script src="assets/scripts/retina.min.js"></script>
-    <script src="http://www.tablesorter.ru/jquery.tablesorter.min.js"></script>
+    <script src="assets/scripts/vendor.js"></script>
     <script>
       $(document).ready(function () {
           $("#table1").tablesorter({

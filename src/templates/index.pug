@@ -105,9 +105,9 @@ block content
               tr
                 th
                   label(for='label_all')
-                    input(id='label_all' type='checkbox', value='1')
+                    input(id='label_all', type='checkbox', value='1')
                     span
-                th Product
+                th(style='width: 50%') Product
                 th Category
                 th(colspan='2') Price
             tbody
@@ -115,7 +115,7 @@ block content
                 tr
                   td
                     label(for='label_' + (tableSales.indexOf(products) + 1) )
-                      input(id='label_' + (tableSales.indexOf(products) + 1) type='checkbox', value='1')
+                      input(id='label_' + (tableSales.indexOf(products) + 1), type='checkbox', value='1')
                       span
                   td= products.Product
                   td= products.Category
@@ -130,10 +130,10 @@ block content
         h1 We Recommend
         .recommend-content
           .recommend-content__item
-            img(src='assets/styles/img/Malaysian.jpg')
+            img(src='assets/styles/img/img1.jpg', srcset='assets/styles/img/img1-2x.jpg 2x')
           .recommend-content__item
-            img(src='assets/styles/img/Malaysian.jpg')
+            img(src='assets/styles/img/img2.jpg', srcset='assets/styles/img/img2-2x.jpg 2x')
           .recommend-content__item
-            img(src='assets/styles/img/Malaysian.jpg')
+            img(src='assets/styles/img/img3.jpg', srcset='assets/styles/img/img3-2x.jpg 2x')
       br
       br
