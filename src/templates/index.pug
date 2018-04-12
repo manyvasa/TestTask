@@ -1,0 +1,139 @@
+extends layouts/layout
+
+
+block content
+
+  -
+    var tableSales = [
+    {
+    'Product': 'Bread',
+    'Category': 'Food',
+    'Price': '$1'
+    },
+    {
+    'Product': 'Milk',
+    'Category': 'Food',
+    'Price': '$2'
+    },
+    {
+    'Product': 'iPhone',
+    'Category': 'Electronics',
+    'Price': '$699'
+    },
+    {
+    'Product': 'TV',
+    'Category': 'Electronics',
+    'Price': '$1099'
+    },
+    {
+    'Product': 'F.Dostoevsky"Crime and Punishment',
+    'Category': 'Books',
+    'Price': '$8'
+    }
+    ];
+  header
+    .inner
+      .header-menu
+        a.header-menu__logo(href='#') Store
+        nav.header-menu__nav
+          ul
+            li
+              a(href='#') Dashboard
+            li
+              a(href='#') Products
+            li
+              a(href='#') Categories
+            li
+              a(href='#') Users
+      .header-profile
+        .header-profile-notif
+          a(href='#')
+            i.fas.fa-bell.header-profile__btn
+        .header-profile-user
+          a(href='#')
+            i.fas.fa-user.header-profile__btn
+      .btn_menu
+        svg(xmlns='http://www.w3.org/2000/svg', width='32', height='32')
+          g
+            title background
+            rect#canvas_background(fill='none', height='402', width='582', y='-1', x='-1')
+          g
+            title Layer 1
+            path#svg_1(fill='#ffffff', d='m4,10l24,0c1.104,0 2,-0.896 2,-2s-0.896,-2 -2,-2l-24,0c-1.104,0 -2,0.896 -2,2s0.896,2 2,2zm24,4l-24,0c-1.104,0 -2,0.896 -2,2s0.896,2 2,2l24,0c1.104,0 2,-0.896 2,-2s-0.896,-2 -2,-2zm0,8l-24,0c-1.104,0 -2,0.896 -2,2s0.896,2 2,2l24,0c1.104,0 2,-0.896 2,-2s-0.896,-2 -2,-2z')
+
+  .content
+    .inner
+      .charts
+        h1 Charts
+        .charts-content
+          .charts-content-wrap
+            .charts-content__item
+              .today.c100.p10.orange
+                span 10
+                .slice
+                  .bar
+                  .fill
+              h2 Today
+            .charts-content__item
+              .week.c100.p75.orange
+                span 75
+                .slice
+                  .bar
+                  .fill
+              h2 Week
+          .charts-content-wrap
+            .charts-content__item
+              .month.c100.p45.green
+                span 45
+                .slice
+                  .bar
+                  .fill
+              h2 Month
+            .charts-content__item
+              .year.c100.p90.blue
+                span 90
+                .slice
+                  .bar
+                  .fill
+              h2 Year
+
+      .sales
+        h1 Sales
+        .sales-content
+          table#table1.sales-content__table
+            thead
+              tr
+                th
+                  label(for='label_all')
+                    input(id='label_all' type='checkbox', value='1')
+                    span
+                th Product
+                th Category
+                th(colspan='2') Price
+            tbody
+              for products in tableSales
+                tr
+                  td
+                    label(for='label_' + (tableSales.indexOf(products) + 1) )
+                      input(id='label_' + (tableSales.indexOf(products) + 1) type='checkbox', value='1')
+                      span
+                  td= products.Product
+                  td= products.Category
+                  td= products.Price
+                  td
+                    a(href='#')
+                      img.btn_edit(src="assets/styles/img/btn-edit.svg")
+                    a(href='#')
+                      img.btn_del(src="assets/styles/img/btn-del.svg")
+
+      .recommend
+        h1 We Recommend
+        .recommend-content
+          .recommend-content__item
+            img(src='assets/styles/img/Malaysian.jpg')
+          .recommend-content__item
+            img(src='assets/styles/img/Malaysian.jpg')
+          .recommend-content__item
+            img(src='assets/styles/img/Malaysian.jpg')
+      br
+      br
