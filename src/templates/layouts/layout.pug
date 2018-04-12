@@ -1,0 +1,40 @@
+doctype html
+html
+  head
+    meta(charset="utf-8")
+    meta(http-equiv="x-ua-compatible" content="ie=edge")
+    title Test Task
+    meta(name="description" content="")
+    meta(name="viewport" content="width=device-width, initial-scale=1")
+    link(rel='stylesheet', href='https://fonts.googleapis.com/css?family=Roboto')
+    link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css')
+    link(rel="stylesheet" href="assets/styles/circle.css")
+    link(rel="stylesheet" href="assets/styles/main.min.css")
+    script(src="//ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.js")
+
+  body
+    block content
+
+    script(src="assets/scripts/retina.min.js")
+    script(src="http://www.tablesorter.ru/jquery.tablesorter.min.js")
+
+    script.
+        $(document).ready(function () {
+            $("#table1").tablesorter({
+                headers: {
+                    0: {
+                        sorter: false
+                    }
+                }
+            });
+            $('.btn_del').click(function (e) {
+                $(this).closest('tr').remove()
+            });
+        });
+    script.
+
+        $(document).ready(function () {
+            $('.btn_menu').click(function () {
+                $('.header-menu__nav').toggleClass("header-menu__nav--pushed");
+                });
+        })
