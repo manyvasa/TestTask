@@ -30,11 +30,11 @@ block sales
 
     .sales
         h1 Sales
-        .sales-content
-            table#table1.sales-content__table
+        .sales__table
+            table#table1
                 thead
                     tr
-                        th
+                        th(style='width: 5%')
                             label(for='label_all')
                                 input(id='label_all', type='checkbox', value='1')
                                 span
@@ -53,6 +53,6 @@ block sales
                             td= products.Price
                             td
                                 a(href='#')
-                                    img.btn_edit(src="assets/styles/img/btn-edit.svg")
+                                    img.edit_btn(src="assets/styles/img/btn-edit.svg")
                                 a(href='#')
-                                    img.btn_del(src="assets/styles/img/btn-del.svg")
+                                    img.del_btn(src="assets/styles/img/btn-del.svg")

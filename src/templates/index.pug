@@ -13,7 +13,7 @@ html
         script(src="//ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.js")
 
     body
-        header
+        header.headerTop
             .inner
                 include includes/header
         .content
@@ -33,14 +33,24 @@ html
                         }
                     }
                 });
-                $('.btn_del').click(function () {
+                $('.del_btn').click(function () {
                     $(this).closest('tr').remove()
                 });
             });
         script.
 
             $(document).ready(function () {
-                $('.btn_menu').click(function () {
-                    $('.header-menu__nav').toggleClass("header-menu__nav--pushed");
+                $('.menu__btn').click(function () {
+                    $('.menu__nav').toggleClass("menu__nav--pushed");
+                });
+            })
+        script.
+
+            $(document).ready(function () {
+                $('#table1 #label_all').click(function () {
+                    if (!$(this).is(":checked"))
+                        $("#table1 input:checkbox").removeAttr("checked");
+                    else
+                        $("#table1 input:checkbox").prop('checked', true);
                 });
             })

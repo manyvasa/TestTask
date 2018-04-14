@@ -50,14 +50,14 @@ label {
   display: flex;
 }
 
-header {
+.headerTop {
   background-color: $header;
   .inner {
     justify-content: space-between;
   }
 }
 
-.header-menu {
+.menu {
   display: flex;
   &__logo {
     padding: 10px 15px 8px 0px;
@@ -80,12 +80,12 @@ header {
       }
     }
     &--pushed {
-      display: block !important;
+      top: 37px !important;
     }
   }
 }
 
-.header-profile {
+.profile {
   display: flex;
   width: 100px;
   justify-content: space-around;
@@ -109,24 +109,24 @@ header {
   }
 }
 
-.charts, .sales, .recommend {
+.charts, .sales, .recommends {
   h1 {margin-bottom: 17px;}
 }
 
 .charts {margin-top: 67px;}
-.recommend {margin-top: 65px;}
+.recommends {margin-top: 65px;}
 .sales {margin-top: 50px;}
 
-.charts-content, .sales-content, .recommend-content {
+.chart, .sales-content, .recommend {
   border-top: 1px solid #4e5d6c;
 }
 
-.charts-content {
+.chart {
   display: flex;
   padding-top: 20px;
   justify-content: space-around;
   flex-wrap: wrap;
-  &-wrap {
+  &__wrap {
     display: flex;
     flex-basis: 300px;
     flex-grow: 1;
@@ -148,18 +148,20 @@ header {
   margin: 0 auto;
 }
 
-.btn_del, .btn_edit {
+.del_btn, .edit_btn {
   width: 12px;
   height: auto;
+  margin-left: 5px;
 }
 
-.btn_menu {
+.menu__btn {
   display: none;
+  cursor: pointer;
 }
 
-.sales-content {
+.sales__table {
   padding-top: 23px;
-  &__table {
+  #table1 {
     width: 100%;
     border-collapse: collapse;
     text-align: left;
@@ -170,6 +172,14 @@ header {
       &.headerSortUp,&.headerSortDown {
         text-decoration: underline;
         color: #ffcf8f;
+        background-repeat: no-repeat;
+        background-position: center right;
+      }
+      &.headerSortUp {
+        background-image: url(img/sort-up.svg);
+      }
+      &.headerSortDown {
+        background-image: url(img/sort-down.svg);
       }
     }
     thead {
@@ -196,15 +206,15 @@ header {
   }
 }
 
-.recommend-content {
+.recommend {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   margin: 0 -12px;
-  padding-top: 20px;
+  padding-top: 8px;
   &__item {
     flex-basis: calc(33.3% - 24px);
-    margin: 0 12px 12px 12px;
+    margin: 12px;
     height: auto;
     img {
       width: 100%;
@@ -218,12 +228,22 @@ header {
 }
 
 @media only screen and (max-width: 600px) {
-  .recommend-content {
+  .recommend {
     flex-direction: column-reverse;
+    &__item:nth-child(2) {order: -1;}
   }
-  table {border: 1px solid $header;}
-  .header-menu__nav, .header-profile {display: none;}
-  .btn_menu {display: block;}
-  .header-menu__nav ul {flex-direction: column;}
+  #table1 {border: 1px solid $header;}
+  .profile {display: none;}
+  .menu__nav {
+    position: absolute;
+    top: -155px;
+    right: 46px;
+    background-color: #4e5d6c;
+    -webkit-transition: top 0.5s ease;
+    a {padding: 8px 7px;}
+  }
+
+  .menu__btn {display: block;}
+  .menu__nav ul {flex-direction: column;}
   .inner {width: 95%;}
 }

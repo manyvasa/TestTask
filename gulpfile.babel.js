@@ -65,6 +65,7 @@ export function html() {
       pretty: true
     }))
     .pipe(gulp.dest(paths.templates.dest))
+    .pipe(browserSync.stream());
 }
 
 export function scripts() {
@@ -103,6 +104,8 @@ function watchFiles() {
 
   gulp.watch(paths.vendor.scripts.src, vendorScripts);
   gulp.watch(paths.vendor.styles.src, vendorStyles);
+
+  gulp.watch('src/templates/includes/*.pug', html);
 
   return gulp.watch(paths.templates.src, html);
 }
